@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1200" height="860" fill="#FFFFFF"/>
+  <text x="600" y="40" text-anchor="middle" font-size="24" font-weight="700" fill="#1A1A1A">Neighbour — Local Service Marketplace</text>
+  <text x="600" y="62" text-anchor="middle" font-size="14" fill="#8B7E74">Use-Case Diagram</text>
+
+  <!-- System boundary -->
+  <rect x="290" y="80" width="620" height="750" rx="14" fill="#FAF6F0" stroke="#1A1A1A" stroke-width="1.5"/>
+  <text x="600" y="108" text-anchor="middle" font-size="15" font-weight="600" fill="#1A1A1A">Local Service Marketplace</text>
+
+  <!-- ===== Association lines (drawn first, behind nodes) ===== -->
+  <g stroke="#B7AEA3" stroke-width="1.4">
+    <!-- Client -> use cases -->
+    <line x1="124" y1="392" x2="705" y2="158"/>
+    <line x1="124" y1="392" x2="340" y2="250"/>
+    <line x1="124" y1="392" x2="340" y2="320"/>
+    <line x1="124" y1="392" x2="340" y2="390"/>
+    <line x1="124" y1="392" x2="340" y2="460"/>
+    <line x1="124" y1="392" x2="340" y2="530"/>
+    <line x1="124" y1="392" x2="340" y2="600"/>
+    <!-- Provider -> use cases -->
+    <line x1="1076" y1="232" x2="705" y2="158"/>
+    <line x1="1076" y1="232" x2="865" y2="250"/>
+    <line x1="1076" y1="232" x2="865" y2="320"/>
+    <line x1="1076" y1="232" x2="865" y2="390"/>
+    <line x1="1076" y1="232" x2="865" y2="460"/>
+    <line x1="1076" y1="232" x2="865" y2="530"/>
+    <!-- Admin -> use cases -->
+    <line x1="1076" y1="652" x2="705" y2="158"/>
+    <line x1="1076" y1="652" x2="865" y2="620"/>
+    <line x1="1076" y1="652" x2="865" y2="690"/>
+    <line x1="1076" y1="652" x2="865" y2="760"/>
+  </g>
+
+  <!-- ===== Use cases (ellipses) ===== -->
+  <g fill="#FFFFFF" stroke="#FF6B35" stroke-width="1.6">
+    <ellipse cx="600" cy="150" rx="105" ry="28"/>
+    <ellipse cx="445" cy="250" rx="105" ry="28"/>
+    <ellipse cx="445" cy="320" rx="105" ry="28"/>
+    <ellipse cx="445" cy="390" rx="105" ry="28"/>
+    <ellipse cx="445" cy="460" rx="105" ry="28"/>
+    <ellipse cx="445" cy="530" rx="105" ry="28"/>
+    <ellipse cx="445" cy="600" rx="105" ry="28"/>
+    <ellipse cx="760" cy="250" rx="105" ry="28"/>
+    <ellipse cx="760" cy="320" rx="105" ry="28"/>
+    <ellipse cx="760" cy="390" rx="105" ry="28"/>
+    <ellipse cx="760" cy="460" rx="105" ry="28"/>
+    <ellipse cx="760" cy="530" rx="105" ry="28"/>
+    <ellipse cx="760" cy="620" rx="105" ry="28"/>
+    <ellipse cx="760" cy="690" rx="105" ry="28"/>
+    <ellipse cx="760" cy="760" rx="105" ry="28"/>
+  </g>
+  <g font-size="12.5" fill="#1A1A1A" text-anchor="middle">
+    <text x="600" y="155">Sign Up / Log In</text>
+    <text x="445" y="255">Browse &amp; Search Services</text>
+    <text x="445" y="325">View Provider Profile</text>
+    <text x="445" y="395">Book a Service</text>
+    <text x="445" y="465">Track My Bookings</text>
+    <text x="445" y="535">Leave a Review</text>
+    <text x="445" y="605">Save to Favourites</text>
+    <text x="760" y="255">Register with ID</text>
+    <text x="760" y="325">Manage Services</text>
+    <text x="760" y="395">Set Availability</text>
+    <text x="760" y="465">Accept / Complete Booking</text>
+    <text x="760" y="535">View Earnings</text>
+    <text x="760" y="625">Approve / Reject Providers</text>
+    <text x="760" y="695">Manage Users</text>
+    <text x="760" y="765">View Sales &amp; Revenue</text>
+  </g>
+
+  <!-- Group labels inside the system -->
+  <text x="445" y="205" text-anchor="middle" font-size="11" font-weight="600" fill="#8B7E74" letter-spacing="1">CLIENT</text>
+  <text x="760" y="205" text-anchor="middle" font-size="11" font-weight="600" fill="#8B7E74" letter-spacing="1">PROVIDER</text>
+  <text x="760" y="580" text-anchor="middle" font-size="11" font-weight="600" fill="#8B7E74" letter-spacing="1">ADMIN</text>
+
+  <!-- ===== Actors ===== -->
+  <!-- Client (left) -->
+  <g stroke="#1A1A1A" stroke-width="2" fill="none">
+    <circle cx="100" cy="340" r="16" fill="#FFF5EE"/>
+    <line x1="100" y1="356" x2="100" y2="406"/>
+    <line x1="76" y1="378" x2="124" y2="378"/>
+    <line x1="100" y1="406" x2="80" y2="440"/>
+    <line x1="100" y1="406" x2="120" y2="440"/>
+  </g>
+  <text x="100" y="462" text-anchor="middle" font-size="14" font-weight="600" fill="#1A1A1A">Client</text>
+
+  <!-- Service Provider (right, upper) -->
+  <g stroke="#1A1A1A" stroke-width="2" fill="none">
+    <circle cx="1100" cy="180" r="16" fill="#FFF5EE"/>
+    <line x1="1100" y1="196" x2="1100" y2="246"/>
+    <line x1="1076" y1="218" x2="1124" y2="218"/>
+    <line x1="1100" y1="246" x2="1080" y2="280"/>
+    <line x1="1100" y1="246" x2="1120" y2="280"/>
+  </g>
+  <text x="1100" y="302" text-anchor="middle" font-size="14" font-weight="600" fill="#1A1A1A">Service Provider</text>
+
+  <!-- Admin (right, lower) -->
+  <g stroke="#1A1A1A" stroke-width="2" fill="none">
+    <circle cx="1100" cy="600" r="16" fill="#FFF5EE"/>
+    <line x1="1100" y1="616" x2="1100" y2="666"/>
+    <line x1="1076" y1="638" x2="1124" y2="638"/>
+    <line x1="1100" y1="666" x2="1080" y2="700"/>
+    <line x1="1100" y1="666" x2="1120" y2="700"/>
+  </g>
+  <text x="1100" y="722" text-anchor="middle" font-size="14" font-weight="600" fill="#1A1A1A">Admin</text>
+</svg>
