@@ -1,0 +1,155 @@
+%% Neighbour — Local Service Marketplace : Entity–Relationship Diagram
+%% Notation: crow's foot. PK = primary key, FK = foreign key, UK = unique key.
+erDiagram
+    USERS ||--o| PROFESSIONAL_PROFILES : "registers as"
+    USERS ||--o{ BOOKINGS : "places (client)"
+    USERS ||--o{ REVIEWS : "writes"
+    USERS ||--o{ FAVORITES : "saves"
+    USERS ||--o{ NOTIFICATIONS : "receives"
+    USERS ||--o{ MESSAGES : "sends / receives"
+    USERS ||--o{ PASSWORD_RESETS : "requests"
+    CATEGORIES ||--o{ SERVICES : "classifies"
+    PROFESSIONAL_PROFILES ||--o{ SERVICES : "offers"
+    PROFESSIONAL_PROFILES ||--o{ BOOKINGS : "fulfils"
+    PROFESSIONAL_PROFILES ||--o{ REVIEWS : "receives"
+    PROFESSIONAL_PROFILES ||--o{ AVAILABILITY : "sets"
+    PROFESSIONAL_PROFILES ||--o{ PROFESSIONAL_TAGS : "has"
+    PROFESSIONAL_PROFILES ||--o{ FAVORITES : "is saved in"
+    SERVICES ||--o{ BOOKINGS : "booked as"
+    BOOKINGS ||--o| REVIEWS : "reviewed by"
+
+    USERS {
+        int id PK
+        string full_name
+        string email UK
+        string password_hash
+        string phone
+        string id_card_number
+        string avatar
+        enum role "client | professional | admin"
+        string location
+        decimal latitude
+        decimal longitude
+        bool is_verified
+        bool is_active
+        enum approval_status "pending | approved | rejected"
+        timestamp created_at
+    }
+
+    PROFESSIONAL_PROFILES {
+        int id PK
+        int user_id FK
+        string title
+        text bio
+        int years_experience
+        text credentials
+        int service_radius
+        bool is_top_pro
+        int response_time_minutes
+        decimal rating
+        int review_count
+    }
+
+    CATEGORIES {
+        int id PK
+        string name UK
+        string slug UK
+        string icon
+        int display_order
+        bool is_active
+    }
+
+    SERVICES {
+        int id PK
+        int professional_id FK
+        int category_id FK
+        string title
+        text description
+        decimal price
+        enum price_unit "hr | session | visit | project | package"
+        string image
+        bool is_featured
+        bool is_active
+    }
+
+    BOOKINGS {
+        int id PK
+        int client_id FK
+        int service_id FK
+        int professional_id FK
+        date booking_date
+        time booking_time
+        text notes
+        enum status "pending | confirmed | in_progress | completed | cancelled"
+        decimal total_amount
+        enum payment_status "pending | paid | refunded"
+        timestamp created_at
+    }
+
+    REVIEWS {
+        int id PK
+        int booking_id FK
+        int client_id FK
+        int professional_id FK
+        int rating "1..5"
+        text comment
+        string service_tag
+        bool is_visible
+        timestamp created_at
+    }
+
+    FAVORITES {
+        int id PK
+        int user_id FK
+        int professional_id FK
+        timestamp created_at
+    }
+
+    AVAILABILITY {
+        int id PK
+        int professional_id FK
+        tinyint day_of_week "0=Sun .. 6=Sat"
+        time start_time
+        time end_time
+        bool is_available
+    }
+
+    PROFESSIONAL_TAGS {
+        int id PK
+        int professional_id FK
+        string tag
+    }
+
+    MESSAGES {
+        int id PK
+        int sender_id FK
+        int receiver_id FK
+        text content
+        bool is_read
+        timestamp created_at
+    }
+
+    NOTIFICATIONS {
+        int id PK
+        int user_id FK
+        string message
+        string link
+        bool is_read
+        timestamp created_at
+    }
+
+    PASSWORD_RESETS {
+        int id PK
+        int user_id FK
+        string token
+        datetime expires_at
+        bool used
+        timestamp created_at
+    }
+
+    LOGIN_ATTEMPTS {
+        int id PK
+        string email
+        string ip
+        timestamp attempted_at
+    }
