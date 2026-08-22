@@ -1,0 +1,54 @@
+# Dependencies — do not commit installed modules/packages
+**/node_modules/
+**/vendor/
+
+# Frontend build output, caches, coverage, and local tooling
+**/dist/
+**/dist-ssr/
+**/build/
+**/.vite/
+**/.cache/
+**/.turbo/
+**/coverage/
+**/*.tsbuildinfo
+**/*.tsbuildinfo
+
+# Environment files and local configuration — keep only examples/templates
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.local
+
+# PHP runtime uploads
+php-backend/uploads/*
+!php-backend/uploads/.gitkeep
+
+# Logs, temporary files, and generated reports
+**/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+**/*.tmp
+**/*.temp
+**/*.bak
+/docs/report/*.docx
+
+# IDE and editor files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Project-specific generated/local files
+neighbour-files.txt
