@@ -1,0 +1,2 @@
+# This file keeps the uploads/ directory in version control.
+# Uploaded images are generated at runtime and are NOT committed (see .gitignore).
