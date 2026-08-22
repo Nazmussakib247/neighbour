@@ -1,0 +1,58 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF6EF"/>
+      <stop offset="1" stop-color="#F2E4D8"/>
+    </linearGradient>
+    <linearGradient id="dup" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F0975A"/>
+      <stop offset="1" stop-color="#DC6A34"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#sbg)"/>
+  <circle cx="200" cy="205" r="140" fill="#FF6B35" opacity="0.08"/>
+
+  <!-- shoulders / kurti -->
+  <path d="M92 400 C92 320 138 284 200 284 C262 284 308 320 308 400 Z" fill="#3E5C74"/>
+  <!-- dupatta sashes over shoulders -->
+  <path d="M108 400 C104 342 128 302 172 290 L150 400 Z" fill="url(#dup)"/>
+  <path d="M292 400 C296 342 272 302 228 290 L250 400 Z" fill="url(#dup)"/>
+
+  <!-- neck -->
+  <path d="M182 250 L218 250 L216 292 Q200 300 184 292 Z" fill="#E3AC82"/>
+  <path d="M184 262 Q200 276 216 262 L214 288 Q200 296 186 288 Z" fill="#CE9670" opacity="0.45"/>
+
+  <!-- hair (back) -->
+  <path d="M132 190 C128 118 168 84 200 84 C232 84 272 118 268 190 C268 235 250 258 250 258 L150 258 C150 258 132 235 132 190 Z" fill="#241B14"/>
+
+  <!-- head -->
+  <ellipse cx="200" cy="182" rx="60" ry="66" fill="#EBB78F"/>
+
+  <!-- ears + earrings -->
+  <circle cx="142" cy="188" r="9" fill="#E3AC82"/>
+  <circle cx="258" cy="188" r="9" fill="#E3AC82"/>
+  <circle cx="142" cy="201" r="3.4" fill="#E9A23B"/>
+  <circle cx="258" cy="201" r="3.4" fill="#E9A23B"/>
+
+  <!-- dupatta draped over crown (hair visible at the front) -->
+  <path d="M126 188 C120 116 165 78 200 78 C235 78 280 116 274 188 C270 150 244 120 200 120 C156 120 130 150 126 188 Z" fill="url(#dup)"/>
+  <path d="M126 188 C120 226 126 262 150 282 C146 240 140 208 150 176 Z" fill="#CF6330"/>
+
+  <!-- fringe peeking under the scarf -->
+  <path d="M150 150 C162 132 186 126 200 126 C214 126 238 132 250 150 C236 140 218 136 200 136 C182 136 164 140 150 150 Z" fill="#241B14"/>
+
+  <!-- brows -->
+  <path d="M168 169 q14 -8 28 0" stroke="#2E2118" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  <path d="M204 169 q14 -8 28 0" stroke="#2E2118" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  <!-- eyes -->
+  <ellipse cx="182" cy="187" rx="4.8" ry="6.4" fill="#2E2118"/>
+  <ellipse cx="218" cy="187" rx="4.8" ry="6.4" fill="#2E2118"/>
+  <!-- nose -->
+  <path d="M200 193 l-5 16 q5 4 10 0" stroke="#D08E63" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- smile -->
+  <path d="M184 223 q16 12 32 0" stroke="#B65A54" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- cheeks -->
+  <circle cx="168" cy="205" r="9" fill="#F2A78A" opacity="0.45"/>
+  <circle cx="232" cy="205" r="9" fill="#F2A78A" opacity="0.45"/>
+</svg>
