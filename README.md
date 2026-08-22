@@ -438,6 +438,6 @@ Base URL: `http://localhost:8080/neighbour/api` (Docker) or `http://localhost/ne
 ---
 
 ## Author
-- Github
-- Linkedin
+- [Github](https://github.com/Nazmussakib247)
+- [Linkedin](https://www.linkedin.com/in/nazmussakib247/)
 - Medium
