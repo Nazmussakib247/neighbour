@@ -1,0 +1,23 @@
+# Neighbour API .htaccess
+# Place this in your XAMPP htdocs/neighbour/ directory
+
+# Enable rewrite engine
+RewriteEngine On
+
+# CORS is handled in config/database.php (origin-specific, credentials-aware).
+# Do NOT set Access-Control-Allow-Origin "*" here — it breaks session cookies.
+
+# Pretty URLs - redirect /api/services to /api/services.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^api/(.+)$ api/$1.php [QSA,L]
+
+# Protect sensitive directories
+RedirectMatch 403 ^/config/.*$
+RedirectMatch 403 ^/sql/.*$
+
+# PHP settings (keep errors out of API responses; check Apache error log instead)
+php_flag display_errors off
+php_flag log_errors on
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
