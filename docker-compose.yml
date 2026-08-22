@@ -1,0 +1,60 @@
+# Neighbour — one-command local stack
+#
+#   docker compose up
+#
+# Frontend : http://localhost:3000
+# Backend  : http://localhost:8080/neighbour/api
+# MySQL    : localhost:3307 (root, no password)
+#
+# XAMPP is NOT needed when using Docker. Ports 8080/3307 are used
+# so a running XAMPP (80/3306) won't clash.
+
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - db_data:/var/lib/mysql
+      # Auto-creates database, tables and seed data on first start
+      - ./php-backend/sql/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  backend:
+    build: ./php-backend
+    volumes:
+      - ./php-backend:/var/www/html/neighbour
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASS: ""
+      DB_NAME: neighbour_db
+    ports:
+      - "8080:80"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - ./app:/app
+      - frontend_node_modules:/app/node_modules
+    environment:
+      VITE_API_URL: http://localhost:8080/neighbour/api
+    command: sh -c "npm install --no-audit --no-fund && npm run dev -- --host 0.0.0.0"
+    ports:
+      - "3000:3000"   # vite.config.ts sets server.port = 3000
+    depends_on:
+      - backend
+
+volumes:
+  db_data:
+  frontend_node_modules:
